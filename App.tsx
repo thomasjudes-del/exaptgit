@@ -323,7 +323,7 @@ const App: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Daïmons */}
             <a href="https://www.daimons.ai/" target="_blank" rel="noopener noreferrer" className="group bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 hover:shadow-xl transition-all flex flex-col h-full">
               <div className="h-48 bg-slate-200">
@@ -347,6 +347,19 @@ const App: React.FC = () => {
                   KAØS <ArrowUpRight size={18} className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </h3>
                 <p className="text-sm text-slate-600">{t.playground.kaos}</p>
+              </div>
+            </a>
+
+            {/* Green Claims Fix */}
+            <a href="/green-claims-fix/" className="group bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 hover:shadow-xl transition-all flex flex-col h-full">
+              <div className="h-48 bg-slate-200 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1200&auto=format&fit=crop" alt="Green Claims Fix" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div className="p-6 flex-grow">
+                <h3 className="text-xl font-bold text-slate-900 mb-2 flex items-center">
+                  Green Claims Fix <ArrowUpRight size={18} className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </h3>
+                <p className="text-sm text-slate-600">{t.playground.greenClaimsFix}</p>
               </div>
             </a>
 
