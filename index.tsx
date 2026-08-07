@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import GreenClaimsFix from './src/pages/GreenClaimsFix';
+import GreenClaimsFixV2 from './src/pages/GreenClaimsFixV2';
 import './index.css';
 
 const rootElement = document.getElementById('root');
@@ -14,7 +14,7 @@ const pathname = window.location.pathname.replace(/\/$/, '') || '/';
 const appPath = basePath && pathname.startsWith(basePath)
   ? pathname.slice(basePath.length) || '/'
   : pathname;
-const Page = appPath === '/green-claims-fix' ? GreenClaimsFix : App;
+const Page = appPath === '/green-claims-fix' ? GreenClaimsFixV2 : App;
 
 const root = ReactDOM.createRoot(rootElement);
 root.render(
