@@ -20,6 +20,30 @@
             console.warn("Could not patch window.fetch:", e);
         }
     </script>
+    <script>
+        // One-time cleanup after migrating exaptation.studio away from Google AI Studio.
+        // The former host registered /_service-worker.js at domain scope, which can keep
+        // serving the previous application after DNS/hosting changes.
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', async () => {
+                try {
+                    const registrations = await navigator.serviceWorker.getRegistrations();
+                    await Promise.all(registrations.map((registration) => registration.unregister()));
+                } catch (e) {
+                    console.warn('Legacy service worker cleanup failed:', e);
+                }
+
+                if ('caches' in window) {
+                    try {
+                        const keys = await caches.keys();
+                        await Promise.all(keys.map((key) => caches.delete(key)));
+                    } catch (e) {
+                        console.warn('Legacy cache cleanup failed:', e);
+                    }
+                }
+            });
+        }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exaptation | Startup Studio</title>
