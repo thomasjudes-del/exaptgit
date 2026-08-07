@@ -21,3 +21,102 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* Green Claims Fix — pricing interaction.
+   Native CSS is used deliberately so the effect remains visible regardless of
+   Tailwind utility generation or the pre-existing transform on the middle card. */
+#offers article {
+  position: relative;
+  transform-origin: center center;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+  will-change: transform;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  #offers article:hover {
+    transform: translateY(-14px) scale(1.055) !important;
+    box-shadow: 0 30px 70px rgba(15, 23, 42, 0.24) !important;
+    border-color: #10b981 !important;
+    z-index: 20;
+  }
+}
+
+.gcf-header-lgi {
+  height: 30px;
+  width: auto;
+  max-width: 112px;
+  object-fit: contain;
+}
+
+.gcf-header-separator {
+  display: inline-block;
+  height: 28px;
+  width: 1px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background: #e2e8f0;
+}
+
+.gcf-footer {
+  border-top: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #0f172a;
+}
+
+.gcf-footer-inner {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 30px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.gcf-footer-logos {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.gcf-footer-logos img:first-child {
+  height: 42px;
+  width: auto;
+  max-width: 260px;
+  object-fit: contain;
+}
+
+.gcf-footer-logos img:last-child {
+  height: 52px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+}
+
+.gcf-footer a {
+  color: #047857;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.gcf-footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .gcf-header-lgi,
+  .gcf-header-separator {
+    display: none;
+  }
+
+  .gcf-footer-inner {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .gcf-footer-logos {
+    justify-content: center;
+  }
+}
