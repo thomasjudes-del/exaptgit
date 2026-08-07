@@ -16,27 +16,13 @@
     if (img && img.getAttribute('src') !== '/green-claims-fix-card.svg') {
       img.setAttribute('src', '/green-claims-fix-card.svg');
       img.setAttribute('alt', 'Green Claims Fix — screening environmental claims, evidence and risk');
+      img.setAttribute('loading', 'eager');
     }
   };
 
-  const enhanceGreenClaimsHeader = () => {
+  const removeLegacyHeaderInjection = () => {
     if (!isGreenClaimsPage()) return;
-    const header = document.querySelector('header');
-    const brandLink = header?.querySelector('a[href="/"]');
-    if (!brandLink || brandLink.querySelector('[data-gcf-lgi-header]')) return;
-
-    const separator = document.createElement('span');
-    separator.className = 'gcf-header-separator';
-    separator.setAttribute('aria-hidden', 'true');
-
-    const lgi = document.createElement('img');
-    lgi.src = '/lgi-20-years.jpg';
-    lgi.alt = 'LGI Sustainable Innovation — 20 years of impact';
-    lgi.className = 'gcf-header-lgi';
-    lgi.setAttribute('data-gcf-lgi-header', 'true');
-
-    brandLink.appendChild(separator);
-    brandLink.appendChild(lgi);
+    document.querySelectorAll('[data-gcf-lgi-header], .gcf-header-separator').forEach((el) => el.remove());
   };
 
   const addGreenClaimsFooter = () => {
@@ -51,7 +37,11 @@
       <div class="gcf-footer-inner">
         <div class="gcf-footer-logos" aria-label="Green Claims Fix is an Exaptation venture backed by LGI Sustainable Innovation">
           <img src="/exaptation-logo.png" alt="Exaptation Studio by LGI">
-          <img src="/lgi-20-years.jpg" alt="LGI Sustainable Innovation — 20 years of impact">
+          <div class="gcf-lgi-lockup" aria-label="LGI Sustainable Innovation — 20 years of impact">
+            <span class="gcf-lgi-wordmark">LGi</span>
+            <span class="gcf-lgi-anniversary">20 years<br><small>of impact</small></span>
+            <span class="gcf-lgi-baseline">sustainable innovation</span>
+          </div>
         </div>
         <div>
           <strong>Green Claims Fix</strong><br>
@@ -74,7 +64,7 @@
 
   const apply = () => {
     enhanceHomeCard();
-    enhanceGreenClaimsHeader();
+    removeLegacyHeaderInjection();
     addGreenClaimsFooter();
     normalizeEmailLinks();
   };
