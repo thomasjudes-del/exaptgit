@@ -23,6 +23,7 @@ export const translations = {
       daimons: "At Daïmons, we design your AI Strategy, we deploy you AI Agents, we drive your AI Transformation.",
       feelincare: "A secure emotional vault and AI-powered guidance to better understand yourself and navigate complex human interactions, at work and elsewhere.",
       kaos: "Has the world become unpredictable? Chaotic? We test predictions, score foresight, and develop superforecasters to navigate uncertainty.",
+      greenClaimsFix: "A fast way for brands to find, substantiate and improve environmental claims — with evidence gaps, clearer wording and a structured substantiation file.",
       weathered: "Turning climate complexity into decisions that can actually be taken. We transform climate data and services into concrete decision tools for territories, insurers and industries."
     },
     team: {
@@ -91,6 +92,7 @@ export const translations = {
       daimons: "Chez Daïmons, nous concevons votre stratégie IA, nous déployons vos agents IA et nous pilotons votre transformation IA.",
       feelincare: "Un coffre-fort émotionnel sécurisé et un accompagnement propulsé par l'IA pour mieux se comprendre et naviguer dans les interactions humaines complexes, au travail et ailleurs.",
       kaos: "Le monde est-il devenu imprévisible ? Chaotique ? Nous testons des prédictions, scorons la prospective et formons des super-prévisionnistes pour naviguer dans l'incertitude.",
+      greenClaimsFix: "Une façon rapide pour les marques d’identifier, documenter et améliorer leurs allégations environnementales — preuves manquantes, formulations plus claires et dossier de justification structuré.",
       weathered: "Transformer la complexité climatique en décisions concrètes. Nous transformons les données et services climatiques en outils de décision pour les territoires, assureurs et industries."
     },
     team: {
