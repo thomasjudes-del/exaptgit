@@ -25,6 +25,29 @@
     document.querySelectorAll('[data-gcf-lgi-header], .gcf-header-separator').forEach((el) => el.remove());
   };
 
+  const createLgiLockup = () => {
+    const lockup = document.createElement('div');
+    lockup.className = 'gcf-lgi-lockup';
+    lockup.setAttribute('aria-label', 'LGI Sustainable Innovation — 20 years of impact');
+    lockup.innerHTML = `
+      <span class="gcf-lgi-wordmark">LGi</span>
+      <span class="gcf-lgi-anniversary">20 years<br><small>of impact</small></span>
+      <span class="gcf-lgi-baseline">sustainable innovation</span>
+    `;
+    return lockup;
+  };
+
+  const replaceAwkwardLgiImages = () => {
+    if (!isGreenClaimsPage()) return;
+    document.querySelectorAll('img[src="/lgi-20-years.jpg"]').forEach((img) => {
+      if (img.closest('[data-gcf-footer]')) return;
+      const parent = img.parentElement;
+      if (!parent) return;
+      parent.replaceChildren(createLgiLockup());
+      parent.classList.add('gcf-lgi-card');
+    });
+  };
+
   const addGreenClaimsFooter = () => {
     if (!isGreenClaimsPage() || document.querySelector('[data-gcf-footer]')) return;
     const main = document.querySelector('main');
@@ -65,6 +88,7 @@
   const apply = () => {
     enhanceHomeCard();
     removeLegacyHeaderInjection();
+    replaceAwkwardLgiImages();
     addGreenClaimsFooter();
     normalizeEmailLinks();
   };
