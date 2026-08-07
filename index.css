@@ -22,22 +22,29 @@ html {
   -webkit-text-fill-color: transparent;
 }
 
-/* Green Claims Fix — pricing interaction */
+/* Green Claims Fix — pricing interaction.
+   Deliberately NOT wrapped in a hover/pointer media query: some Windows
+   touch-capable machines report hover:none even when a mouse is being used. */
 #offers article {
   position: relative;
   transform-origin: center center;
-  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+  transition: transform 220ms cubic-bezier(.2,.8,.2,1), box-shadow 220ms ease, border-color 220ms ease, filter 220ms ease, opacity 220ms ease;
   will-change: transform;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  #offers article:hover,
-  #offers article:focus-within {
-    transform: translateY(-14px) scale(1.055) !important;
-    box-shadow: 0 30px 70px rgba(15, 23, 42, 0.24) !important;
-    border-color: #10b981 !important;
-    z-index: 20;
-  }
+#offers article:hover,
+#offers article:focus-within {
+  transform: translateY(-18px) scale(1.065) !important;
+  box-shadow: 0 36px 80px rgba(15, 23, 42, 0.28) !important;
+  border-color: #10b981 !important;
+  filter: brightness(1.025);
+  z-index: 30;
+}
+
+/* Make the selected plan read immediately by slightly receding its neighbours. */
+#offers:has(article:hover) article:not(:hover) {
+  transform: scale(.985);
+  opacity: .88;
 }
 
 /* Clean LGI lockup used instead of the white-background source JPEG. */
