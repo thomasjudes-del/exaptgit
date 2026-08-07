@@ -22,9 +22,7 @@ html {
   -webkit-text-fill-color: transparent;
 }
 
-/* Green Claims Fix — pricing interaction.
-   Native CSS is used deliberately so the effect remains visible regardless of
-   Tailwind utility generation or the pre-existing transform on the middle card. */
+/* Green Claims Fix — pricing interaction */
 #offers article {
   position: relative;
   transform-origin: center center;
@@ -33,7 +31,8 @@ html {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  #offers article:hover {
+  #offers article:hover,
+  #offers article:focus-within {
     transform: translateY(-14px) scale(1.055) !important;
     box-shadow: 0 30px 70px rgba(15, 23, 42, 0.24) !important;
     border-color: #10b981 !important;
@@ -41,20 +40,55 @@ html {
   }
 }
 
-.gcf-header-lgi {
-  height: 30px;
-  width: auto;
-  max-width: 112px;
-  object-fit: contain;
+/* Clean LGI lockup used instead of the white-background source JPEG. */
+.gcf-lgi-card {
+  overflow: hidden;
 }
 
-.gcf-header-separator {
-  display: inline-block;
-  height: 28px;
-  width: 1px;
-  margin-left: 10px;
-  margin-right: 10px;
-  background: #e2e8f0;
+.gcf-lgi-lockup {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  column-gap: 12px;
+  align-items: center;
+  min-width: 205px;
+  padding: 8px 4px;
+  background: transparent;
+  color: #16374a;
+  line-height: 1;
+}
+
+.gcf-lgi-wordmark {
+  grid-row: 1 / span 2;
+  align-self: center;
+  font-size: 44px;
+  font-weight: 800;
+  letter-spacing: -0.08em;
+  color: #38a6db;
+}
+
+.gcf-lgi-anniversary {
+  align-self: end;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 0.88;
+  color: #e59b16;
+  white-space: nowrap;
+}
+
+.gcf-lgi-anniversary small {
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.gcf-lgi-baseline {
+  grid-column: 1 / span 2;
+  margin-top: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #e59b16;
 }
 
 .gcf-footer {
@@ -66,7 +100,7 @@ html {
 .gcf-footer-inner {
   max-width: 80rem;
   margin: 0 auto;
-  padding: 30px 24px;
+  padding: 26px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -88,13 +122,6 @@ html {
   object-fit: contain;
 }
 
-.gcf-footer-logos img:last-child {
-  height: 52px;
-  width: auto;
-  max-width: 160px;
-  object-fit: contain;
-}
-
 .gcf-footer a {
   color: #047857;
   font-weight: 700;
@@ -106,11 +133,6 @@ html {
 }
 
 @media (max-width: 640px) {
-  .gcf-header-lgi,
-  .gcf-header-separator {
-    display: none;
-  }
-
   .gcf-footer-inner {
     justify-content: center;
     text-align: center;
@@ -118,5 +140,9 @@ html {
 
   .gcf-footer-logos {
     justify-content: center;
+  }
+
+  .gcf-lgi-lockup {
+    min-width: 180px;
   }
 }
