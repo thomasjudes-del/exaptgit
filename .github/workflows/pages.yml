@@ -30,15 +30,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Type check
+        run: npm run lint
+
       - name: Build
         run: npm run build
         env:
           VITE_BASE_PATH: /
 
-      - name: Add static route for Green Claims Fix
+      - name: Generate static Green Claims routes
         run: |
-          mkdir -p dist/green-claims-fix
-          cp dist/index.html dist/green-claims-fix/index.html
+          node scripts/generate-static-routes.mjs
           touch dist/.nojekyll
 
       - name: Configure Pages
