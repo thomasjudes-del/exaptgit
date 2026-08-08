@@ -47,7 +47,7 @@ html {
   opacity: .88;
 }
 
-/* Clean LGI lockup used instead of the white-background source JPEG. */
+/* Clean LGI lockup used instead of the white-background source JPEG in the trust block. */
 .gcf-lgi-card {
   overflow: hidden;
 }
@@ -111,22 +111,60 @@ html {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 28px;
   flex-wrap: wrap;
 }
 
 .gcf-footer-logos {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
-.gcf-footer-logos img:first-child {
+.gcf-footer-brand-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.gcf-footer-exaptation {
+  display: block;
   height: 42px;
   width: auto;
-  max-width: 260px;
+  max-width: 275px;
   object-fit: contain;
+}
+
+.gcf-footer-divider {
+  width: 1px;
+  height: 44px;
+  background: #dbe3ea;
+  flex: 0 0 auto;
+}
+
+/* Crop the supplied LGI 20 years source image to the actual logo area. */
+.gcf-footer-lgi-crop {
+  position: relative;
+  width: 190px;
+  height: 65px;
+  overflow: hidden;
+  background: #ffffff;
+  flex: 0 0 auto;
+}
+
+.gcf-footer-lgi-crop img {
+  position: absolute;
+  width: 556px;
+  max-width: none;
+  height: auto;
+  left: -256px;
+  top: -34px;
+}
+
+.gcf-footer-contact {
+  line-height: 1.5;
+  text-align: right;
 }
 
 .gcf-footer a {
@@ -147,6 +185,27 @@ html {
 
   .gcf-footer-logos {
     justify-content: center;
+    gap: 14px;
+  }
+
+  .gcf-footer-exaptation {
+    height: 34px;
+    max-width: 220px;
+  }
+
+  .gcf-footer-divider {
+    height: 36px;
+  }
+
+  .gcf-footer-lgi-crop {
+    transform: scale(.86);
+    transform-origin: left center;
+    margin-right: -26px;
+  }
+
+  .gcf-footer-contact {
+    width: 100%;
+    text-align: center;
   }
 
   .gcf-lgi-lockup {
