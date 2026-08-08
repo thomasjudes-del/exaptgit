@@ -60,12 +60,17 @@
       <div class="gcf-footer-inner">
         <div class="gcf-footer-logos" aria-label="Green Claims Fix is an Exaptation venture backed by LGI Sustainable Innovation">
           <a class="gcf-footer-brand-link" href="/" aria-label="Exaptation Studio">
-            <img class="gcf-footer-exaptation" src="/exaptation-logo.png" alt="Exaptation Studio by LGI">
+            <span class="gcf-exaptation-lockup">
+              <span class="gcf-exaptation-wordmark">exaptation studio</span>
+              <span class="gcf-exaptation-by">by LGi</span>
+            </span>
           </a>
           <span class="gcf-footer-divider" aria-hidden="true"></span>
           <a class="gcf-footer-brand-link" href="https://lgi.earth/" target="_blank" rel="noopener noreferrer" aria-label="LGI Sustainable Innovation">
-            <span class="gcf-footer-lgi-crop">
-              <img src="/lgi-20-years.jpg" alt="LGI Sustainable Innovation — 20 years of impact">
+            <span class="gcf-lgi-lockup gcf-lgi-lockup-footer">
+              <span class="gcf-lgi-wordmark">LGi</span>
+              <span class="gcf-lgi-anniversary">20 years<br><small>of impact</small></span>
+              <span class="gcf-lgi-baseline">sustainable innovation</span>
             </span>
           </a>
         </div>
