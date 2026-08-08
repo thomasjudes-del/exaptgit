@@ -176,6 +176,28 @@ const copy = {
   },
 } as const;
 
+const frLibrary = {
+  eyebrow: 'Green Claims Library',
+  title: 'Les règles, claim par claim.',
+  subtitle: 'Des guides courts et sourcés pour comprendre ce qu’un claim implique, ce qu’il faut pouvoir démontrer et ce qui change en 2026.',
+  guides: [
+    {
+      label: 'Claims génériques',
+      title: 'Peut-on encore dire « éco-responsable », « écologique », « green » ou « durable » en 2026 ?',
+      text: 'Ce qui est déjà encadré en France, ce qui change au 27 septembre 2026 et quand un claim générique peut rester défendable.',
+      href: '/fr/green-claims-fix/guides/eco-responsable-ecologique-green-durable/',
+    },
+    {
+      label: 'Claims carbone',
+      title: '« Neutre en carbone », « zéro carbone » : ce qui change en 2026.',
+      text: 'Le régime français actuel, les claims fondés sur la compensation, les réductions réelles et les nouvelles interdictions européennes.',
+      href: '/fr/green-claims-fix/guides/neutre-carbone-zero-carbone/',
+    },
+  ],
+  read: 'Lire le guide',
+  all: 'Voir tous les guides',
+} as const;
+
 const mailto = 'mailto:thomas@exaptation.studio?subject=Green%20Claims%20Fix';
 const directiveUrl = 'https://eur-lex.europa.eu/eli/dir/2024/825/oj';
 const frUrl = 'https://exaptation.studio/fr/green-claims-fix/';
@@ -320,6 +342,31 @@ const GreenClaimsFixV2: React.FC<GreenClaimsFixProps> = ({ initialLang = 'fr' })
         <OfferCard tier={t.silverTier} name={t.silverName} price={t.silverPrice} outcome={t.silverOutcome} tagline={t.silverTagline} features={t.silverFeatures} cta={t.silverCta} featured tag={t.silverTag}/>
         <OfferCard tier={t.goldTier} name={t.goldName} price={t.goldPrice} outcome={t.goldOutcome} tagline={t.goldTagline} features={t.goldFeatures} cta={t.goldCta}/>
       </div><p className="mx-auto mt-8 max-w-4xl text-center text-xs leading-relaxed text-slate-500">{t.disclaimer}</p></div></section>
+
+      {lang === 'fr' && (
+        <section className="bg-white py-16 text-slate-950 md:py-20">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+              <div className="max-w-3xl">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-700">{frLibrary.eyebrow}</p>
+                <h2 className="mt-4 text-3xl font-bold tracking-tight md:text-5xl">{frLibrary.title}</h2>
+                <p className="mt-4 text-lg leading-relaxed text-slate-600">{frLibrary.subtitle}</p>
+              </div>
+              <a href="/fr/green-claims-fix/guides/" className="inline-flex shrink-0 items-center gap-2 font-bold text-emerald-700 hover:text-emerald-900">{frLibrary.all}<ArrowRight size={17}/></a>
+            </div>
+            <div className="mt-9 grid gap-5 md:grid-cols-2">
+              {frLibrary.guides.map(guide => (
+                <article key={guide.href} className="group rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-0.5 hover:border-emerald-300 hover:bg-white hover:shadow-lg hover:shadow-slate-200/50 md:p-7">
+                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-emerald-700">{guide.label}</p>
+                  <h3 className="mt-3 text-xl font-bold leading-snug md:text-2xl">{guide.title}</h3>
+                  <p className="mt-4 leading-relaxed text-slate-600">{guide.text}</p>
+                  <a href={guide.href} className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-slate-950 group-hover:text-emerald-700">{frLibrary.read}<ArrowRight size={16}/></a>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="bg-white py-20 text-slate-950 md:py-24"><div className="mx-auto max-w-7xl px-6"><div className="grid gap-10 lg:grid-cols-2 lg:items-center"><div><h2 className="text-3xl font-bold tracking-tight md:text-5xl">{t.whoTitle}</h2><p className="mt-5 text-lg leading-relaxed text-slate-600">{t.whoText}</p></div><div className="flex flex-wrap gap-3 lg:justify-end">{t.channels.map(channel => <span key={channel} className="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700">{channel}</span>)}</div></div></div></section>
 
