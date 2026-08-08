@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import GreenClaimsFixV2 from './src/pages/GreenClaimsFixV2';
+import { GreenClaimsGuidePage, GreenClaimsLibraryHub } from './src/pages/GreenClaimsLibrary';
 import './index.css';
 
 const rootElement = document.getElementById('root');
@@ -18,11 +19,18 @@ const appPath = basePath && pathname.startsWith(basePath)
 const legacyGcf = appPath === '/green-claims-fix';
 const frGcf = appPath === '/fr/green-claims-fix';
 const enGcf = appPath === '/en/green-claims-fix';
+const guideHub = appPath === '/fr/green-claims-fix/guides';
+const guidePrefix = '/fr/green-claims-fix/guides/';
+const guideSlug = appPath.startsWith(guidePrefix) ? appPath.slice(guidePrefix.length) : null;
 
 const root = ReactDOM.createRoot(rootElement);
 root.render(
   <React.StrictMode>
-    {legacyGcf || frGcf ? (
+    {guideHub ? (
+      <GreenClaimsLibraryHub />
+    ) : guideSlug ? (
+      <GreenClaimsGuidePage slug={guideSlug} />
+    ) : legacyGcf || frGcf ? (
       <GreenClaimsFixV2 initialLang="fr" />
     ) : enGcf ? (
       <GreenClaimsFixV2 initialLang="en" />
