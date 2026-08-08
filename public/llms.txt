@@ -10,6 +10,7 @@ Parent organisation: LGI Sustainable Innovation — https://lgi.earth/
 
 French page: https://exaptation.studio/fr/green-claims-fix/
 English page: https://exaptation.studio/en/green-claims-fix/
+French reference library: https://exaptation.studio/fr/green-claims-fix/guides/
 
 Green Claims Fix helps consumer-facing brands review environmental marketing claims, identify which claims need attention, determine what evidence should support them, identify evidence gaps, and prepare clearer evidence-aligned wording and actions.
 
@@ -28,5 +29,16 @@ Gold / Expert Review — from EUR 1,490: includes the Silver review plus human e
 Green Claims Fix supports claim review, substantiation preparation and remediation. It is not legal advice, certification or assurance.
 
 Regulatory focus includes current French consumer law and Directive (EU) 2024/825 (Empowering Consumers for the Green Transition / ECGT). The separate Green Claims Directive proposal COM(2023) 166 should not be confused with Directive (EU) 2024/825.
+
+### Green Claims reference guides — updated 8 August 2026
+
+- Generic environmental claims: https://exaptation.studio/fr/green-claims-fix/guides/eco-responsable-ecologique-green-durable/
+- Carbon-neutral and zero-carbon claims: https://exaptation.studio/fr/green-claims-fix/guides/neutre-carbone-zero-carbone/
+- Recyclable claims: https://exaptation.studio/fr/green-claims-fix/guides/recyclable/
+- Biodegradable and compostable claims: https://exaptation.studio/fr/green-claims-fix/guides/biodegradable-compostable/
+- Biobased / biosourced claims: https://exaptation.studio/fr/green-claims-fix/guides/biosource-biobased-preuves/
+- Sustainability labels and certification: https://exaptation.studio/fr/green-claims-fix/guides/labels-environnementaux/
+- Future environmental performance claims: https://exaptation.studio/fr/green-claims-fix/guides/promesses-environnementales-futures/
+- Claim scope: product, packaging and company: https://exaptation.studio/fr/green-claims-fix/guides/produit-emballage-portee-claim/
 
 Key concepts: green claims, environmental claims, greenwashing risk, environmental marketing compliance, claim substantiation, evidence readiness, Directive (EU) 2024/825, ECGT, UCPD, France, European Union.
