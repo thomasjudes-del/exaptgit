@@ -22,9 +22,7 @@ html {
   -webkit-text-fill-color: transparent;
 }
 
-/* Green Claims Fix — pricing interaction.
-   Deliberately NOT wrapped in a hover/pointer media query: some Windows
-   touch-capable machines report hover:none even when a mouse is being used. */
+/* Green Claims Fix — pricing interaction */
 #offers article {
   position: relative;
   transform-origin: center center;
@@ -41,13 +39,12 @@ html {
   z-index: 30;
 }
 
-/* Make the selected plan read immediately by slightly receding its neighbours. */
 #offers:has(article:hover) article:not(:hover) {
   transform: scale(.985);
   opacity: .88;
 }
 
-/* Clean LGI lockup used instead of the white-background source JPEG in the trust block. */
+/* LGI lockup, used in trust blocks and footer. */
 .gcf-lgi-card {
   overflow: hidden;
 }
@@ -98,8 +95,9 @@ html {
   color: #e59b16;
 }
 
+/* Footer — intentionally high-contrast and oversized enough to read immediately. */
 .gcf-footer {
-  border-top: 1px solid #e2e8f0;
+  border-top: 1px solid #dbe3ea;
   background: #ffffff;
   color: #0f172a;
 }
@@ -107,65 +105,87 @@ html {
 .gcf-footer-inner {
   max-width: 80rem;
   margin: 0 auto;
-  padding: 30px 24px;
+  padding: 34px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 32px;
+  gap: 36px;
   flex-wrap: wrap;
 }
 
 .gcf-footer-logos {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 28px;
   flex-wrap: nowrap;
 }
 
 .gcf-footer-brand-link {
   display: inline-flex;
   align-items: center;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
-/* Exaptation must read as a real brand lock-up, not as a tiny icon. */
-.gcf-footer-exaptation {
+.gcf-exaptation-lockup {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-width: 330px;
+  color: #102631;
+  line-height: .92;
+}
+
+.gcf-exaptation-wordmark {
   display: block;
-  width: 315px;
-  height: auto;
-  max-width: 38vw;
-  object-fit: contain;
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: .055em;
+  white-space: nowrap;
+}
+
+.gcf-exaptation-by {
+  display: block;
+  margin-top: 8px;
+  margin-right: 4px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .02em;
+  color: #102631;
 }
 
 .gcf-footer-divider {
   width: 1px;
-  height: 58px;
-  background: #dbe3ea;
-  flex: 0 0 auto;
-}
-
-/* Crop the supplied LGI 20 years source image to the actual logo area. */
-.gcf-footer-lgi-crop {
-  position: relative;
-  width: 210px;
   height: 72px;
-  overflow: hidden;
-  background: #ffffff;
+  background: #cbd5e1;
   flex: 0 0 auto;
 }
 
-.gcf-footer-lgi-crop img {
-  position: absolute;
-  width: 615px;
-  max-width: none;
-  height: auto;
-  left: -283px;
-  top: -38px;
+.gcf-lgi-lockup-footer {
+  min-width: 245px;
+  padding: 4px 0;
+}
+
+.gcf-lgi-lockup-footer .gcf-lgi-wordmark {
+  font-size: 56px;
+}
+
+.gcf-lgi-lockup-footer .gcf-lgi-anniversary {
+  font-size: 26px;
+}
+
+.gcf-lgi-lockup-footer .gcf-lgi-anniversary small {
+  font-size: 11px;
+}
+
+.gcf-lgi-lockup-footer .gcf-lgi-baseline {
+  margin-top: 7px;
+  font-size: 12px;
 }
 
 .gcf-footer-contact {
   line-height: 1.5;
   text-align: right;
+  font-size: 15px;
 }
 
 .gcf-footer a {
@@ -178,7 +198,7 @@ html {
   text-decoration: underline;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 860px) {
   .gcf-footer-inner {
     justify-content: center;
     text-align: center;
@@ -187,23 +207,25 @@ html {
   .gcf-footer-logos {
     width: 100%;
     justify-content: center;
-    gap: 14px;
+    gap: 18px;
     flex-wrap: wrap;
   }
 
-  .gcf-footer-exaptation {
-    width: 250px;
-    max-width: 76vw;
+  .gcf-exaptation-lockup {
+    min-width: 0;
+    align-items: center;
+  }
+
+  .gcf-exaptation-wordmark {
+    font-size: clamp(28px, 8vw, 38px);
   }
 
   .gcf-footer-divider {
     display: none;
   }
 
-  .gcf-footer-lgi-crop {
-    transform: scale(.88);
-    transform-origin: center center;
-    margin: -4px -10px;
+  .gcf-lgi-lockup-footer {
+    min-width: 220px;
   }
 
   .gcf-footer-contact {
