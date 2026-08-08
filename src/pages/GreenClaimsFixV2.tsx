@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import {
   ArrowLeft,
   ArrowRight,
@@ -14,6 +14,10 @@ import {
 } from 'lucide-react';
 
 type Language = 'en' | 'fr';
+
+type GreenClaimsFixProps = {
+  initialLang?: Language;
+};
 
 const copy = {
   en: {
@@ -46,24 +50,30 @@ const copy = {
     fixTitle: 'Fix',
     fixText: 'You receive prioritised actions, evidence requests and clearer wording to consider.',
     offersEyebrow: 'Pricing',
-    offersTitle: 'Choose the level that matches the stakes.',
-    offersSubtitle: 'Start small, review a full set of priority claims, or add expert human review.',
+    offersTitle: 'Choose the answer you need next.',
+    offersSubtitle: 'Start with a focused action plan, map claims to evidence, or add expert human review for higher-stakes communications.',
+    bronzeTier: 'Bronze',
     bronzeName: 'Quick Fix',
     bronzePrice: '€39',
-    bronzeTagline: 'A fast review of your highest-priority claims.',
-    bronzeFeatures: ['Up to 5 priority claims', 'Why each claim needs attention', 'Official source or rule reference', 'Evidence checklist', 'Recommended next action'],
-    bronzeCta: 'Get Quick Fix',
+    bronzeOutcome: 'Know what to fix next.',
+    bronzeTagline: 'A focused review of up to 5 priority claims, with the reason each needs attention and the concrete next action.',
+    bronzeFeatures: ['Up to 5 priority claims', 'Why each claim deserves attention', 'Official source or rule behind the flag', 'Evidence to collect or request', 'Recommended next action'],
+    bronzeCta: 'Get Bronze',
+    silverTier: 'Silver',
     silverName: 'Green Claims Fix',
     silverPrice: '€249',
-    silverTag: 'Best for brands',
-    silverTagline: 'A structured review of claims, evidence and remediation actions.',
-    silverFeatures: ['Up to 25 priority claims', 'Claim-to-evidence mapping', 'Evidence-gap analysis', 'Supplier evidence requests', 'Clearer wording suggestions', 'Green Claims Evidence Pack'],
-    silverCta: 'Start Green Claims Fix',
+    silverTag: 'Full review',
+    silverOutcome: 'Know what you can substantiate — and with what evidence.',
+    silverTagline: 'Map up to 25 priority claims to evidence, identify the gaps and prepare clearer evidence-aligned wording.',
+    silverFeatures: ['Up to 25 priority claims', 'Claim-to-evidence mapping', 'What is supported vs. what is still missing', 'Supplier evidence requests', 'Clearer wording suggestions', 'Green Claims Evidence Pack'],
+    silverCta: 'Start Silver',
+    goldTier: 'Gold',
     goldName: 'Expert Review',
     goldPrice: 'From €1,490',
-    goldTagline: 'Add a human review when the claims or campaign carry more risk.',
-    goldFeatures: ['Everything in Green Claims Fix', 'Human review of priority claims', 'Review of supporting documents', 'Consolidated action file', 'Review call', 'Recheck after changes'],
-    goldCta: 'Request Expert Review',
+    goldOutcome: 'Add expert human review before higher-stakes use.',
+    goldTagline: 'Use the full Green Claims Fix review with expert scrutiny of priority claims, evidence and remediation choices.',
+    goldFeatures: ['Everything in Silver', 'Human review of priority claims', 'Review of supporting documents', 'Consolidated action file', 'Review call', 'Recheck after changes'],
+    goldCta: 'Request Gold',
     disclaimer: 'Green Claims Fix supports claim review, substantiation preparation and remediation. It is not legal advice, certification or assurance.',
     whoTitle: 'For consumer brands that already communicate environmental benefits.',
     whoText: 'Useful when your marketing refers to recycled content, sustainability, climate, circularity, materials, packaging, durability or other environmental characteristics.',
@@ -78,9 +88,9 @@ const copy = {
     faqs: [
       ['What is a green claim?', 'A green claim is a commercial statement or representation suggesting that a product, service, brand or business has an environmental benefit, a lower environmental impact or an improved environmental performance.'],
       ['How do I know whether my green claims are sufficiently substantiated?', 'The key questions are what the claim precisely means, what it covers and whether the available evidence directly supports that wording and scope. Green Claims Fix organises those checks claim by claim.'],
-      ['What does Green Claims Fix deliver?', 'Depending on the offer, you receive a prioritised claim review, source references, an evidence checklist or evidence-gap analysis, recommended actions and wording suggestions. The Green Claims Fix offer also includes a structured Evidence Pack.'],
+      ['What does Green Claims Fix deliver?', 'Bronze tells you what needs attention and what to do next for up to 5 priority claims. Silver maps up to 25 claims to evidence, identifies gaps and prepares an Evidence Pack. Gold adds expert human review, document review, a consolidated action file and a recheck after changes.'],
       ['Which rules are considered?', 'The service focuses first on France and the EU consumer-law framework, including Directive (EU) 2024/825, together with relevant official national guidance.'],
-      ['Can you review an entire website?', 'Yes. The Green Claims Fix offer is designed to review public website content and prioritise the environmental claims that warrant further attention.'],
+      ['Can you review an entire website?', 'Yes. The Silver offer is designed to review public website content and prioritise the environmental claims that warrant further attention.'],
       ['Does this replace legal advice or certification?', 'No. Green Claims Fix helps you prepare and document your claims. It does not issue legal opinions, certifications or guarantees of compliance.'],
     ],
     finalTitle: 'Before your next campaign, know which claims you can stand behind.',
@@ -117,24 +127,30 @@ const copy = {
     fixTitle: 'Fix',
     fixText: 'Vous recevez des actions priorisées, les preuves à demander et des formulations plus précises à envisager.',
     offersEyebrow: 'Tarifs',
-    offersTitle: 'Choisissez le niveau adapté à vos enjeux.',
-    offersSubtitle: 'Commencez par quelques claims, passez en revue vos principales allégations ou ajoutez une revue humaine experte.',
+    offersTitle: 'Choisissez le niveau de réponse dont vous avez besoin.',
+    offersSubtitle: 'Commencez par un plan d’action ciblé, reliez vos claims à leurs preuves, ou ajoutez une revue humaine pour les communications à plus fort enjeu.',
+    bronzeTier: 'Bronze',
     bronzeName: 'Quick Fix',
     bronzePrice: '39 €',
-    bronzeTagline: 'Une revue rapide de vos claims les plus prioritaires.',
-    bronzeFeatures: ['Jusqu’à 5 claims prioritaires', 'Pourquoi chaque claim mérite attention', 'Source officielle ou règle associée', 'Checklist des preuves', 'Action recommandée'],
-    bronzeCta: 'Obtenir Quick Fix',
+    bronzeOutcome: 'Savoir quoi corriger maintenant.',
+    bronzeTagline: 'Une revue ciblée de jusqu’à 5 claims prioritaires, avec la raison du point d’attention et l’action concrète à mener ensuite.',
+    bronzeFeatures: ['Jusqu’à 5 claims prioritaires', 'Pourquoi chaque claim mérite attention', 'Source officielle ou règle à l’origine du point d’attention', 'Preuves à réunir ou à demander', 'Action recommandée'],
+    bronzeCta: 'Obtenir Bronze',
+    silverTier: 'Argent',
     silverName: 'Green Claims Fix',
     silverPrice: '249 €',
-    silverTag: 'Idéal pour une marque',
-    silverTagline: 'Une revue structurée de vos claims, preuves et actions correctives.',
-    silverFeatures: ['Jusqu’à 25 claims prioritaires', 'Mapping claim ↔ preuve', 'Analyse des preuves manquantes', 'Demandes de justificatifs fournisseurs', 'Suggestions de formulations plus précises', 'Green Claims Evidence Pack'],
-    silverCta: 'Lancer Green Claims Fix',
+    silverTag: 'Revue complète',
+    silverOutcome: 'Savoir ce que vous pouvez défendre — et avec quelles preuves.',
+    silverTagline: 'Reliez jusqu’à 25 claims prioritaires aux preuves disponibles, identifiez les manques et préparez des formulations plus précisément étayées.',
+    silverFeatures: ['Jusqu’à 25 claims prioritaires', 'Mapping claim ↔ preuve', 'Ce qui est étayé vs. ce qui manque encore', 'Demandes de justificatifs fournisseurs', 'Suggestions de formulations plus précises', 'Green Claims Evidence Pack'],
+    silverCta: 'Lancer Argent',
+    goldTier: 'Gold',
     goldName: 'Expert Review',
     goldPrice: 'À partir de 1 490 €',
-    goldTagline: 'Ajoutez une revue humaine lorsque l’enjeu du claim ou de la campagne est plus élevé.',
-    goldFeatures: ['Tout Green Claims Fix', 'Revue humaine des claims prioritaires', 'Revue des justificatifs', 'Plan d’action consolidé', 'Échange de restitution', 'Recheck après modifications'],
-    goldCta: 'Demander une Expert Review',
+    goldOutcome: 'Ajouter un regard expert avant un usage à plus fort enjeu.',
+    goldTagline: 'Utilisez la revue Green Claims Fix complète avec une analyse humaine des claims prioritaires, des preuves et des choix de correction.',
+    goldFeatures: ['Tout Argent', 'Revue humaine des claims prioritaires', 'Revue des justificatifs', 'Plan d’action consolidé', 'Échange de restitution', 'Recheck après modifications'],
+    goldCta: 'Demander Gold',
     disclaimer: 'Green Claims Fix aide à revoir, documenter et préparer la correction des allégations environnementales. Il ne constitue ni un avis juridique, ni une certification, ni une assurance de conformité.',
     whoTitle: 'Pour les marques grand public qui communiquent déjà sur des bénéfices environnementaux.',
     whoText: 'Particulièrement utile lorsque vos communications parlent de contenu recyclé, durabilité, climat, circularité, matériaux, packaging, longévité ou autres caractéristiques environnementales.',
@@ -149,9 +165,9 @@ const copy = {
     faqs: [
       ['Qu’est-ce qu’une allégation environnementale ou green claim ?', 'Il s’agit d’un message commercial suggérant qu’un produit, un service, une marque ou une entreprise présente un bénéfice environnemental, un impact plus faible ou une amélioration de sa performance environnementale.'],
       ['Comment savoir si mes allégations sont suffisamment justifiées ?', 'Il faut vérifier ce que le claim signifie précisément, ce qu’il couvre et si les éléments disponibles soutiennent directement cette formulation et ce périmètre. Green Claims Fix organise ces vérifications claim par claim.'],
-      ['Que reçoit-on avec Green Claims Fix ?', 'Selon l’offre choisie : revue priorisée des claims, références aux sources, checklist ou analyse des preuves manquantes, actions recommandées et suggestions de formulations. L’offre Green Claims Fix comprend également un Evidence Pack structuré.'],
+      ['Que reçoit-on avec Green Claims Fix ?', 'Bronze vous dit ce qui mérite attention et quoi faire ensuite pour jusqu’à 5 claims prioritaires. Argent relie jusqu’à 25 claims aux preuves, identifie les manques et prépare un Evidence Pack. Gold ajoute une revue humaine, l’examen des justificatifs, un plan consolidé et un recheck après modifications.'],
       ['Quelles règles sont prises en compte ?', 'Le service se concentre d’abord sur la France et le cadre européen du droit de la consommation, notamment la directive (UE) 2024/825, ainsi que les orientations officielles nationales pertinentes.'],
-      ['Pouvez-vous revoir l’ensemble d’un site web ?', 'Oui. L’offre Green Claims Fix est conçue pour examiner les contenus publics d’un site et prioriser les allégations environnementales qui nécessitent une attention supplémentaire.'],
+      ['Pouvez-vous revoir l’ensemble d’un site web ?', 'Oui. L’offre Argent est conçue pour examiner les contenus publics d’un site et prioriser les allégations environnementales qui nécessitent une attention supplémentaire.'],
       ['Est-ce que Green Claims Fix remplace un avocat ou une certification ?', 'Non. Green Claims Fix aide à préparer et documenter vos allégations. Il ne délivre pas d’avis juridique, de certification ni de garantie de conformité.'],
     ],
     finalTitle: 'Avant votre prochaine campagne, sachez quels claims vous pouvez réellement défendre.',
@@ -162,23 +178,62 @@ const copy = {
 
 const mailto = 'mailto:thomas@exaptation.studio?subject=Green%20Claims%20Fix';
 const directiveUrl = 'https://eur-lex.europa.eu/eli/dir/2024/825/oj';
+const frUrl = 'https://exaptation.studio/fr/green-claims-fix/';
+const enUrl = 'https://exaptation.studio/en/green-claims-fix/';
 
-const GreenClaimsFixV2: React.FC = () => {
-  const [lang, setLang] = useState<Language>('fr');
+const GreenClaimsFixV2: React.FC<GreenClaimsFixProps> = ({ initialLang = 'fr' }) => {
+  const lang = initialLang;
   const t = copy[lang];
+  const canonicalUrl = lang === 'fr' ? frUrl : enUrl;
+  const alternateUrl = lang === 'fr' ? enUrl : frUrl;
+  const alternateLabel = lang === 'fr' ? 'EN' : 'FR';
 
   useEffect(() => {
-    document.title = 'Green Claims Fix | Exaptation';
     const description = lang === 'fr'
-      ? 'Green Claims Fix aide les marques à identifier, documenter et corriger leurs allégations environnementales en France et dans l’Union européenne.'
-      : 'Green Claims Fix helps brands identify, substantiate and remediate environmental marketing claims in France and the European Union.';
-    let meta = document.querySelector('meta[name="description"]');
-    if (!meta) {
-      meta = document.createElement('meta');
-      meta.setAttribute('name', 'description');
-      document.head.appendChild(meta);
-    }
-    meta.setAttribute('content', description);
+      ? 'Identifiez les allégations environnementales à revoir, les preuves à réunir et les actions à mener pour vos communications en France et dans l’Union européenne.'
+      : 'Identify environmental claims to review, the evidence to collect and the actions to take for communications in France and the European Union.';
+    const title = lang === 'fr'
+      ? 'Green Claims Fix | Revue des allégations environnementales France & UE'
+      : 'Green Claims Fix | Environmental claims review for France & the EU';
+
+    document.documentElement.lang = lang;
+    document.title = title;
+
+    const upsertMeta = (selector: string, attr: 'name' | 'property', key: string, value: string) => {
+      let element = document.querySelector<HTMLMetaElement>(selector);
+      if (!element) {
+        element = document.createElement('meta');
+        element.setAttribute(attr, key);
+        document.head.appendChild(element);
+      }
+      element.setAttribute('content', value);
+    };
+
+    const upsertLink = (selector: string, rel: string, href: string, hreflang?: string) => {
+      let element = document.querySelector<HTMLLinkElement>(selector);
+      if (!element) {
+        element = document.createElement('link');
+        element.setAttribute('rel', rel);
+        if (hreflang) element.setAttribute('hreflang', hreflang);
+        document.head.appendChild(element);
+      }
+      element.setAttribute('href', href);
+    };
+
+    upsertMeta('meta[name="description"]', 'name', 'description', description);
+    upsertMeta('meta[property="og:title"]', 'property', 'og:title', title);
+    upsertMeta('meta[property="og:description"]', 'property', 'og:description', description);
+    upsertMeta('meta[property="og:type"]', 'property', 'og:type', 'website');
+    upsertMeta('meta[property="og:url"]', 'property', 'og:url', canonicalUrl);
+    upsertMeta('meta[property="og:image"]', 'property', 'og:image', 'https://exaptation.studio/green-claims-fix-card.jpg');
+    upsertMeta('meta[name="twitter:card"]', 'name', 'twitter:card', 'summary_large_image');
+    upsertMeta('meta[name="twitter:title"]', 'name', 'twitter:title', title);
+    upsertMeta('meta[name="twitter:description"]', 'name', 'twitter:description', description);
+    upsertMeta('meta[name="twitter:image"]', 'name', 'twitter:image', 'https://exaptation.studio/green-claims-fix-card.jpg');
+    upsertLink('link[rel="canonical"]', 'canonical', canonicalUrl);
+    upsertLink('link[rel="alternate"][hreflang="fr"]', 'alternate', frUrl, 'fr');
+    upsertLink('link[rel="alternate"][hreflang="en"]', 'alternate', enUrl, 'en');
+    upsertLink('link[rel="alternate"][hreflang="x-default"]', 'alternate', frUrl, 'x-default');
 
     const old = document.getElementById('green-claims-fix-schema');
     old?.remove();
@@ -189,17 +244,23 @@ const GreenClaimsFixV2: React.FC = () => {
       '@context': 'https://schema.org',
       '@type': 'Service',
       name: 'Green Claims Fix',
-      provider: { '@type': 'Organization', name: 'Exaptation Studio', parentOrganization: { '@type': 'Organization', name: 'LGI Sustainable Innovation' } },
+      url: canonicalUrl,
+      provider: {
+        '@type': 'Organization',
+        name: 'Exaptation Studio',
+        parentOrganization: { '@type': 'Organization', name: 'LGI Sustainable Innovation' },
+      },
       areaServed: ['France', 'European Union'],
       description,
       offers: [
-        { '@type': 'Offer', name: 'Quick Fix', price: '39', priceCurrency: 'EUR' },
-        { '@type': 'Offer', name: 'Green Claims Fix', price: '249', priceCurrency: 'EUR' },
+        { '@type': 'Offer', name: lang === 'fr' ? 'Bronze — Quick Fix' : 'Bronze — Quick Fix', price: '39', priceCurrency: 'EUR' },
+        { '@type': 'Offer', name: lang === 'fr' ? 'Argent — Green Claims Fix' : 'Silver — Green Claims Fix', price: '249', priceCurrency: 'EUR' },
+        { '@type': 'Offer', name: 'Gold — Expert Review', price: '1490', priceCurrency: 'EUR' },
       ],
     });
     document.head.appendChild(script);
     return () => script.remove();
-  }, [lang]);
+  }, [lang, canonicalUrl]);
 
   return (
     <main className="min-h-screen bg-slate-950 text-white selection:bg-emerald-300 selection:text-slate-950">
@@ -207,7 +268,7 @@ const GreenClaimsFixV2: React.FC = () => {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <a href="/" className="inline-flex items-center gap-2 text-sm font-semibold text-white/70 hover:text-white"><ArrowLeft size={16}/>{t.back}</a>
           <div className="flex items-center gap-3">
-            <button onClick={() => setLang(lang === 'fr' ? 'en' : 'fr')} className="inline-flex items-center gap-2 rounded-full border border-white/15 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white/70 hover:text-white"><Globe2 size={14}/>{lang === 'fr' ? 'EN' : 'FR'}</button>
+            <a href={alternateUrl} hrefLang={lang === 'fr' ? 'en' : 'fr'} className="inline-flex items-center gap-2 rounded-full border border-white/15 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white/70 hover:text-white"><Globe2 size={14}/>{alternateLabel}</a>
             <a href={mailto} className="hidden rounded-full bg-white px-4 py-2 text-sm font-bold text-slate-950 hover:bg-emerald-300 sm:inline-flex">{t.primary}</a>
           </div>
         </div>
@@ -254,10 +315,10 @@ const GreenClaimsFixV2: React.FC = () => {
         <article className="rounded-3xl border border-white/10 bg-white/5 p-7"><CheckCircle2 className="mb-5 text-emerald-400"/><h3 className="text-2xl font-bold">{t.fixTitle}</h3><p className="mt-3 leading-relaxed text-slate-400">{t.fixText}</p></article>
       </div></div></section>
 
-      <section id="pricing" className="bg-slate-100 py-20 text-slate-950 md:py-28"><div className="mx-auto max-w-7xl px-6"><div className="max-w-3xl"><p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-700">{t.offersEyebrow}</p><h2 className="mt-4 text-4xl font-bold tracking-tight md:text-6xl">{t.offersTitle}</h2><p className="mt-5 text-lg text-slate-600">{t.offersSubtitle}</p></div><div className="mt-12 grid gap-6 lg:grid-cols-3">
-        <OfferCard name={t.bronzeName} price={t.bronzePrice} tagline={t.bronzeTagline} features={t.bronzeFeatures} cta={t.bronzeCta}/>
-        <OfferCard name={t.silverName} price={t.silverPrice} tagline={t.silverTagline} features={t.silverFeatures} cta={t.silverCta} featured tag={t.silverTag}/>
-        <OfferCard name={t.goldName} price={t.goldPrice} tagline={t.goldTagline} features={t.goldFeatures} cta={t.goldCta}/>
+      <section id="pricing" className="bg-slate-100 py-20 text-slate-950 md:py-28"><div className="mx-auto max-w-7xl px-6"><div className="max-w-4xl"><p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-700">{t.offersEyebrow}</p><h2 className="mt-4 text-4xl font-bold tracking-tight md:text-6xl">{t.offersTitle}</h2><p className="mt-5 text-lg text-slate-600">{t.offersSubtitle}</p></div><div className="mt-12 grid gap-6 lg:grid-cols-3">
+        <OfferCard tier={t.bronzeTier} name={t.bronzeName} price={t.bronzePrice} outcome={t.bronzeOutcome} tagline={t.bronzeTagline} features={t.bronzeFeatures} cta={t.bronzeCta}/>
+        <OfferCard tier={t.silverTier} name={t.silverName} price={t.silverPrice} outcome={t.silverOutcome} tagline={t.silverTagline} features={t.silverFeatures} cta={t.silverCta} featured tag={t.silverTag}/>
+        <OfferCard tier={t.goldTier} name={t.goldName} price={t.goldPrice} outcome={t.goldOutcome} tagline={t.goldTagline} features={t.goldFeatures} cta={t.goldCta}/>
       </div><p className="mx-auto mt-8 max-w-4xl text-center text-xs leading-relaxed text-slate-500">{t.disclaimer}</p></div></section>
 
       <section className="bg-white py-20 text-slate-950 md:py-24"><div className="mx-auto max-w-7xl px-6"><div className="grid gap-10 lg:grid-cols-2 lg:items-center"><div><h2 className="text-3xl font-bold tracking-tight md:text-5xl">{t.whoTitle}</h2><p className="mt-5 text-lg leading-relaxed text-slate-600">{t.whoText}</p></div><div className="flex flex-wrap gap-3 lg:justify-end">{t.channels.map(channel => <span key={channel} className="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700">{channel}</span>)}</div></div></div></section>
@@ -273,10 +334,33 @@ const GreenClaimsFixV2: React.FC = () => {
   );
 };
 
-const OfferCard = ({name,price,tagline,features,cta,featured=false,tag}:{name:string;price:string;tagline:string;features:readonly string[];cta:string;featured?:boolean;tag?:string}) => (
+type OfferCardProps = {
+  tier: string;
+  name: string;
+  price: string;
+  outcome: string;
+  tagline: string;
+  features: readonly string[];
+  cta: string;
+  featured?: boolean;
+  tag?: string;
+};
+
+const OfferCard = ({ tier, name, price, outcome, tagline, features, cta, featured = false, tag }: OfferCardProps) => (
   <article className={`relative flex flex-col rounded-3xl p-7 ${featured ? 'border-2 border-emerald-500 bg-slate-950 text-white shadow-2xl shadow-emerald-900/15 lg:-translate-y-3' : 'border border-slate-200 bg-white shadow-sm'}`}>
-    {tag && <span className="absolute right-6 top-6 rounded-full bg-emerald-400 px-3 py-1 text-xs font-bold uppercase tracking-wider text-slate-950">{tag}</span>}
-    <h3 className="text-2xl font-bold">{name}</h3><p className="mt-3 text-4xl font-bold">{price}</p><p className={`mt-4 min-h-16 ${featured ? 'text-slate-300' : 'text-slate-600'}`}>{tagline}</p><div className={`my-7 h-px ${featured ? 'bg-white/10' : 'bg-slate-100'}`}/><div className="space-y-3">{features.map(item => <p key={item} className={`flex items-start gap-2 text-sm ${featured ? 'text-slate-200' : 'text-slate-700'}`}><CheckCircle2 size={16} className="mt-0.5 shrink-0 text-emerald-500"/>{item}</p>)}</div><a href={mailto} className={`mt-8 inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-bold ${featured ? 'bg-emerald-400 text-slate-950 hover:bg-emerald-300' : 'border border-slate-300 hover:border-slate-950 hover:bg-slate-950 hover:text-white'}`}>{cta}</a>
+    <div className="flex items-start justify-between gap-4">
+      <div>
+        <p className={`text-xs font-black uppercase tracking-[0.2em] ${featured ? 'text-emerald-400' : 'text-emerald-700'}`}>{tier}</p>
+        <h3 className="mt-2 text-2xl font-bold">{name}</h3>
+      </div>
+      {tag && <span className="rounded-full bg-emerald-400 px-3 py-1 text-xs font-bold uppercase tracking-wider text-slate-950">{tag}</span>}
+    </div>
+    <p className="mt-4 text-4xl font-bold">{price}</p>
+    <p className={`mt-5 text-lg font-bold leading-snug ${featured ? 'text-white' : 'text-slate-950'}`}>{outcome}</p>
+    <p className={`mt-3 min-h-20 text-sm leading-relaxed ${featured ? 'text-slate-300' : 'text-slate-600'}`}>{tagline}</p>
+    <div className={`my-7 h-px ${featured ? 'bg-white/10' : 'bg-slate-100'}`}/>
+    <div className="space-y-3">{features.map(item => <p key={item} className={`flex items-start gap-2 text-sm ${featured ? 'text-slate-200' : 'text-slate-700'}`}><CheckCircle2 size={16} className="mt-0.5 shrink-0 text-emerald-500"/>{item}</p>)}</div>
+    <a href={mailto} className={`mt-8 inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-bold ${featured ? 'bg-emerald-400 text-slate-950 hover:bg-emerald-300' : 'border border-slate-300 hover:border-slate-950 hover:bg-slate-950 hover:text-white'}`}>{cta}</a>
   </article>
 );
 
