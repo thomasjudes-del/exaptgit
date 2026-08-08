@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import {
-  ArrowLeft,
   ArrowRight,
   CheckCircle2,
   ChevronDown,
@@ -288,7 +287,10 @@ const GreenClaimsFixV2: React.FC<GreenClaimsFixProps> = ({ initialLang = 'fr' })
     <main className="min-h-screen bg-slate-950 text-white selection:bg-emerald-300 selection:text-slate-950">
       <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/90 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <a href="/" className="inline-flex items-center gap-2 text-sm font-semibold text-white/70 hover:text-white"><ArrowLeft size={16}/>{t.back}</a>
+          <a href={canonicalUrl} className="inline-flex items-baseline gap-2.5" aria-label="Green Claims Fix — by Exaptation">
+            <span className="text-base font-black tracking-tight text-white sm:text-lg">Green Claims Fix</span>
+            <span className="hidden text-xs font-semibold text-white/45 sm:inline">by Exaptation</span>
+          </a>
           <div className="flex items-center gap-3">
             <a href={alternateUrl} hrefLang={lang === 'fr' ? 'en' : 'fr'} className="inline-flex items-center gap-2 rounded-full border border-white/15 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white/70 hover:text-white"><Globe2 size={14}/>{alternateLabel}</a>
             <a href={mailto} className="hidden rounded-full bg-white px-4 py-2 text-sm font-bold text-slate-950 hover:bg-emerald-300 sm:inline-flex">{t.primary}</a>
