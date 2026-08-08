@@ -107,19 +107,19 @@ html {
 .gcf-footer-inner {
   max-width: 80rem;
   margin: 0 auto;
-  padding: 26px 24px;
+  padding: 30px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 28px;
+  gap: 32px;
   flex-wrap: wrap;
 }
 
 .gcf-footer-logos {
   display: flex;
   align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
+  gap: 24px;
+  flex-wrap: nowrap;
 }
 
 .gcf-footer-brand-link {
@@ -128,17 +128,18 @@ html {
   text-decoration: none;
 }
 
+/* Exaptation must read as a real brand lock-up, not as a tiny icon. */
 .gcf-footer-exaptation {
   display: block;
-  height: 42px;
-  width: auto;
-  max-width: 275px;
+  width: 315px;
+  height: auto;
+  max-width: 38vw;
   object-fit: contain;
 }
 
 .gcf-footer-divider {
   width: 1px;
-  height: 44px;
+  height: 58px;
   background: #dbe3ea;
   flex: 0 0 auto;
 }
@@ -146,8 +147,8 @@ html {
 /* Crop the supplied LGI 20 years source image to the actual logo area. */
 .gcf-footer-lgi-crop {
   position: relative;
-  width: 190px;
-  height: 65px;
+  width: 210px;
+  height: 72px;
   overflow: hidden;
   background: #ffffff;
   flex: 0 0 auto;
@@ -155,11 +156,11 @@ html {
 
 .gcf-footer-lgi-crop img {
   position: absolute;
-  width: 556px;
+  width: 615px;
   max-width: none;
   height: auto;
-  left: -256px;
-  top: -34px;
+  left: -283px;
+  top: -38px;
 }
 
 .gcf-footer-contact {
@@ -177,30 +178,32 @@ html {
   text-decoration: underline;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 760px) {
   .gcf-footer-inner {
     justify-content: center;
     text-align: center;
   }
 
   .gcf-footer-logos {
+    width: 100%;
     justify-content: center;
     gap: 14px;
+    flex-wrap: wrap;
   }
 
   .gcf-footer-exaptation {
-    height: 34px;
-    max-width: 220px;
+    width: 250px;
+    max-width: 76vw;
   }
 
   .gcf-footer-divider {
-    height: 36px;
+    display: none;
   }
 
   .gcf-footer-lgi-crop {
-    transform: scale(.86);
-    transform-origin: left center;
-    margin-right: -26px;
+    transform: scale(.88);
+    transform-origin: center center;
+    margin: -4px -10px;
   }
 
   .gcf-footer-contact {
