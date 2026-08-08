@@ -20,7 +20,6 @@ type GreenClaimsFixProps = {
 
 const copy = {
   en: {
-    back: 'Exaptation Studio',
     venture: 'An Exaptation venture · backed by LGI Sustainable Innovation',
     eyebrow: 'Green claims review for EU-facing brands',
     title: 'Know which environmental claims need evidence — and what to do next.',
@@ -40,6 +39,7 @@ const copy = {
     evidence: ['Packaging composition', 'Recycled-content percentage', 'Supplier or certification evidence'],
     actionLabel: 'Possible action',
     action: '“Packaging made with 82% recycled fibre.”',
+    evidenceMatched: 'Evidence matched to claim',
     actionNote: 'Example only. Suggested wording always depends on the evidence actually available.',
     processTitle: 'Find. Prove. Fix.',
     findTitle: 'Find',
@@ -97,99 +97,99 @@ const copy = {
     finalCta: 'Review my claims',
   },
   fr: {
-    back: 'Exaptation Studio',
-    venture: 'Une venture Exaptation · soutenue par LGI Sustainable Innovation',
+    venture: 'Une initiative Exaptation · soutenue par LGI Sustainable Innovation',
     eyebrow: 'Revue des allégations environnementales · France & UE',
-    title: 'Identifiez les claims environnementaux à documenter — et ce qu’il faut faire ensuite.',
+    title: 'Identifiez les allégations environnementales à documenter — et ce qu’il faut faire ensuite.',
     subtitle: 'Green Claims Fix passe en revue vos allégations environnementales publiques, identifie les preuves manquantes et vous remet un plan d’action priorisé avec les justificatifs à réunir et des formulations plus précises à envisager.',
-    primary: 'Faire revoir mes claims',
+    primary: 'Faire revoir mes allégations',
     secondary: 'Voir les tarifs',
     reassurance: ['France & UE', 'Mission ponctuelle', 'Sources officielles citées'],
     regulation: 'Une allégation environnementale doit être claire, précise et justifiée. Le cadre européen se renforce à partir du 27 septembre 2026.',
     regulationLink: 'Voir la directive européenne',
     exampleLabel: 'Ce que vous recevez',
-    exampleTitle: 'D’un claim vague à une action concrète.',
-    claimLabel: 'Claim identifié',
+    exampleTitle: 'D’une allégation vague à une action concrète.',
+    claimLabel: 'Allégation identifiée',
     claim: '« Notre emballage est éco-responsable. »',
     status: 'Revue recommandée',
-    why: 'Le bénéfice environnemental est large et son périmètre n’est pas clair. Le claim nécessite une base plus précise et des éléments de preuve adaptés.',
+    why: 'Le bénéfice environnemental est large et son périmètre n’est pas clair. L’allégation nécessite une base plus précise et des éléments de preuve adaptés.',
     evidenceLabel: 'Éléments à vérifier',
     evidence: ['Composition de l’emballage', 'Pourcentage de contenu recyclé', 'Justificatif fournisseur ou certification'],
     actionLabel: 'Action possible',
     action: '« Emballage composé à 82 % de fibres recyclées. »',
+    evidenceMatched: 'Preuve associée à l’allégation',
     actionNote: 'Exemple illustratif. Toute suggestion de formulation dépend des preuves réellement disponibles.',
-    processTitle: 'Find. Prove. Fix.',
-    findTitle: 'Find',
+    processTitle: 'Repérer. Prouver. Corriger.',
+    findTitle: 'Repérer',
     findText: 'Nous identifions les allégations environnementales sur votre site, vos fiches produits et vos contenus marketing publics.',
-    proveTitle: 'Prove',
-    proveText: 'Nous indiquons ce qui justifie chaque claim prioritaire — et les éléments qui manquent encore.',
-    fixTitle: 'Fix',
+    proveTitle: 'Prouver',
+    proveText: 'Nous indiquons ce qui justifie chaque allégation prioritaire — et les éléments qui manquent encore.',
+    fixTitle: 'Corriger',
     fixText: 'Vous recevez des actions priorisées, les preuves à demander et des formulations plus précises à envisager.',
     offersEyebrow: 'Tarifs',
     offersTitle: 'Choisissez le niveau de réponse dont vous avez besoin.',
-    offersSubtitle: 'Commencez par un plan d’action ciblé, reliez vos claims à leurs preuves, ou ajoutez une revue humaine pour les communications à plus fort enjeu.',
+    offersSubtitle: 'Commencez par un plan d’action ciblé, reliez vos allégations à leurs preuves, ou ajoutez une revue humaine pour les communications à plus fort enjeu.',
     bronzeTier: 'Bronze',
-    bronzeName: 'Quick Fix',
+    bronzeName: 'Revue express',
     bronzePrice: '39 €',
     bronzeOutcome: 'Savoir quoi corriger maintenant.',
-    bronzeTagline: 'Une revue ciblée de jusqu’à 5 claims prioritaires, avec la raison du point d’attention et l’action concrète à mener ensuite.',
-    bronzeFeatures: ['Jusqu’à 5 claims prioritaires', 'Pourquoi chaque claim mérite attention', 'Source officielle ou règle à l’origine du point d’attention', 'Preuves à réunir ou à demander', 'Action recommandée'],
-    bronzeCta: 'Obtenir Bronze',
+    bronzeTagline: 'Une revue ciblée de jusqu’à 5 allégations prioritaires, avec la raison du point d’attention et l’action concrète à mener ensuite.',
+    bronzeFeatures: ['Jusqu’à 5 allégations prioritaires', 'Pourquoi chaque allégation mérite attention', 'Source officielle ou règle à l’origine du point d’attention', 'Preuves à réunir ou à demander', 'Action recommandée'],
+    bronzeCta: 'Choisir Bronze',
     silverTier: 'Argent',
     silverName: 'Green Claims Fix',
     silverPrice: '249 €',
     silverTag: 'Revue complète',
     silverOutcome: 'Savoir ce que vous pouvez défendre — et avec quelles preuves.',
-    silverTagline: 'Reliez jusqu’à 25 claims prioritaires aux preuves disponibles, identifiez les manques et préparez des formulations plus précisément étayées.',
-    silverFeatures: ['Jusqu’à 25 claims prioritaires', 'Mapping claim ↔ preuve', 'Ce qui est étayé vs. ce qui manque encore', 'Demandes de justificatifs fournisseurs', 'Suggestions de formulations plus précises', 'Green Claims Evidence Pack'],
-    silverCta: 'Lancer Argent',
+    silverTagline: 'Reliez jusqu’à 25 allégations prioritaires aux preuves disponibles, identifiez les manques et préparez des formulations plus précisément étayées.',
+    silverFeatures: ['Jusqu’à 25 allégations prioritaires', 'Correspondance allégation ↔ preuve', 'Ce qui est étayé vs. ce qui manque encore', 'Demandes de justificatifs fournisseurs', 'Suggestions de formulations plus précises', 'Dossier de preuves Green Claims'],
+    silverCta: 'Choisir Argent',
     goldTier: 'Gold',
-    goldName: 'Expert Review',
+    goldName: 'Revue experte',
     goldPrice: 'À partir de 1 490 €',
     goldOutcome: 'Ajouter un regard expert avant un usage à plus fort enjeu.',
-    goldTagline: 'Utilisez la revue Green Claims Fix complète avec une analyse humaine des claims prioritaires, des preuves et des choix de correction.',
-    goldFeatures: ['Tout Argent', 'Revue humaine des claims prioritaires', 'Revue des justificatifs', 'Plan d’action consolidé', 'Échange de restitution', 'Recheck après modifications'],
+    goldTagline: 'Utilisez la revue Green Claims Fix complète avec une analyse humaine des allégations prioritaires, des preuves et des choix de correction.',
+    goldFeatures: ['Tout Argent', 'Revue humaine des allégations prioritaires', 'Revue des justificatifs', 'Plan d’action consolidé', 'Échange de restitution', 'Nouvelle vérification après modifications'],
     goldCta: 'Demander Gold',
     disclaimer: 'Green Claims Fix aide à revoir, documenter et préparer la correction des allégations environnementales. Il ne constitue ni un avis juridique, ni une certification, ni une assurance de conformité.',
     whoTitle: 'Pour les marques grand public qui communiquent déjà sur des bénéfices environnementaux.',
-    whoText: 'Particulièrement utile lorsque vos communications parlent de contenu recyclé, durabilité, climat, circularité, matériaux, packaging, longévité ou autres caractéristiques environnementales.',
-    channels: ['Sites web', 'Fiches produits', 'Packaging', 'Publicités & campagnes', 'Marketplaces'],
+    whoText: 'Particulièrement utile lorsque vos communications parlent de contenu recyclé, durabilité, climat, circularité, matériaux, emballages, longévité ou autres caractéristiques environnementales.',
+    channels: ['Sites web', 'Fiches produits', 'Emballages', 'Publicités & campagnes', 'Places de marché'],
     trustEyebrow: 'Créé par Exaptation',
     trustTitle: 'Une expertise européenne en innovation durable derrière chaque revue.',
-    trustText: 'Green Claims Fix est une venture Exaptation, soutenue par LGI Sustainable Innovation. LGI travaille sur l’innovation durable depuis 2005 et a mené plus de 150 missions et projets internationaux et européens en innovation.',
-    stats: [['20+', 'ans d’innovation durable'], ['150+', 'missions et projets internationaux & européens'], ['UE', 'focus droit de la consommation & durabilité']],
+    trustText: 'Green Claims Fix est une initiative Exaptation, soutenue par LGI Sustainable Innovation. LGI travaille sur l’innovation durable depuis 2005 et a mené plus de 150 missions et projets internationaux et européens en innovation.',
+    stats: [['20+', 'ans d’innovation durable'], ['150+', 'missions et projets internationaux & européens'], ['UE', 'droit de la consommation & durabilité']],
     methodTitle: 'Sources traçables. Les preuves avant les conclusions.',
     methodText: 'Chaque point prioritaire est relié à une source officielle ou à une base réglementaire identifiable. La revue examine ensemble la formulation, son périmètre et les preuves disponibles, plutôt que de considérer qu’un mot isolé constitue automatiquement une infraction.',
-    faqTitle: 'FAQ Green Claims',
+    faqTitle: 'FAQ sur les allégations environnementales',
     faqs: [
-      ['Qu’est-ce qu’une allégation environnementale ou green claim ?', 'Il s’agit d’un message commercial suggérant qu’un produit, un service, une marque ou une entreprise présente un bénéfice environnemental, un impact plus faible ou une amélioration de sa performance environnementale.'],
-      ['Comment savoir si mes allégations sont suffisamment justifiées ?', 'Il faut vérifier ce que le claim signifie précisément, ce qu’il couvre et si les éléments disponibles soutiennent directement cette formulation et ce périmètre. Green Claims Fix organise ces vérifications claim par claim.'],
-      ['Que reçoit-on avec Green Claims Fix ?', 'Bronze vous dit ce qui mérite attention et quoi faire ensuite pour jusqu’à 5 claims prioritaires. Argent relie jusqu’à 25 claims aux preuves, identifie les manques et prépare un Evidence Pack. Gold ajoute une revue humaine, l’examen des justificatifs, un plan consolidé et un recheck après modifications.'],
+      ['Qu’est-ce qu’une allégation environnementale ?', 'Il s’agit d’un message commercial suggérant qu’un produit, un service, une marque ou une entreprise présente un bénéfice environnemental, un impact plus faible ou une amélioration de sa performance environnementale.'],
+      ['Comment savoir si mes allégations sont suffisamment justifiées ?', 'Il faut vérifier ce que l’allégation signifie précisément, ce qu’elle couvre et si les éléments disponibles soutiennent directement cette formulation et ce périmètre. Green Claims Fix organise ces vérifications allégation par allégation.'],
+      ['Que reçoit-on avec Green Claims Fix ?', 'Bronze vous dit ce qui mérite attention et quoi faire ensuite pour jusqu’à 5 allégations prioritaires. Argent relie jusqu’à 25 allégations aux preuves, identifie les manques et prépare un dossier de preuves. Gold ajoute une revue humaine, l’examen des justificatifs, un plan consolidé et une nouvelle vérification après modifications.'],
       ['Quelles règles sont prises en compte ?', 'Le service se concentre d’abord sur la France et le cadre européen du droit de la consommation, notamment la directive (UE) 2024/825, ainsi que les orientations officielles nationales pertinentes.'],
       ['Pouvez-vous revoir l’ensemble d’un site web ?', 'Oui. L’offre Argent est conçue pour examiner les contenus publics d’un site et prioriser les allégations environnementales qui nécessitent une attention supplémentaire.'],
       ['Est-ce que Green Claims Fix remplace un avocat ou une certification ?', 'Non. Green Claims Fix aide à préparer et documenter vos allégations. Il ne délivre pas d’avis juridique, de certification ni de garantie de conformité.'],
     ],
-    finalTitle: 'Avant votre prochaine campagne, sachez quels claims vous pouvez réellement défendre.',
+    finalTitle: 'Avant votre prochaine campagne, sachez quelles allégations vous pouvez réellement défendre.',
     finalText: 'Envoyez-nous votre site et choisissez le niveau de revue adapté à votre besoin.',
-    finalCta: 'Faire revoir mes claims',
+    finalCta: 'Faire revoir mes allégations',
   },
 } as const;
 
 const frLibrary = {
-  eyebrow: 'Green Claims Library',
-  title: 'Les règles, claim par claim.',
-  subtitle: 'Des guides courts et sourcés pour comprendre ce qu’un claim implique, ce qu’il faut pouvoir démontrer et ce qui change en 2026.',
+  eyebrow: 'Guides des allégations environnementales',
+  title: 'Les règles, allégation par allégation.',
+  subtitle: 'Des guides courts et sourcés pour comprendre ce qu’une allégation implique, ce qu’il faut pouvoir démontrer et ce qui change en 2026.',
   guides: [
     {
-      label: 'Claims génériques',
+      label: 'Allégations génériques',
       title: 'Peut-on encore dire « éco-responsable », « écologique », « green » ou « durable » en 2026 ?',
-      text: 'Ce qui est déjà encadré en France, ce qui change au 27 septembre 2026 et quand un claim générique peut rester défendable.',
+      text: 'Ce qui est déjà encadré en France, ce qui change au 27 septembre 2026 et quand une allégation générique peut rester défendable.',
       href: '/fr/green-claims-fix/guides/eco-responsable-ecologique-green-durable/',
     },
     {
-      label: 'Claims carbone',
+      label: 'Allégations carbone',
       title: '« Neutre en carbone », « zéro carbone » : ce qui change en 2026.',
-      text: 'Le régime français actuel, les claims fondés sur la compensation, les réductions réelles et les nouvelles interdictions européennes.',
+      text: 'Le régime français actuel, les allégations fondées sur la compensation, les réductions réelles et les nouvelles interdictions européennes.',
       href: '/fr/green-claims-fix/guides/neutre-carbone-zero-carbone/',
     },
   ],
@@ -206,8 +206,6 @@ const GreenClaimsFixV2: React.FC<GreenClaimsFixProps> = ({ initialLang = 'fr' })
   const lang = initialLang;
   const t = copy[lang];
   const canonicalUrl = lang === 'fr' ? frUrl : enUrl;
-  const alternateUrl = lang === 'fr' ? enUrl : frUrl;
-  const alternateLabel = lang === 'fr' ? 'EN' : 'FR';
 
   useEffect(() => {
     const description = lang === 'fr'
@@ -274,25 +272,36 @@ const GreenClaimsFixV2: React.FC<GreenClaimsFixProps> = ({ initialLang = 'fr' })
       areaServed: ['France', 'European Union'],
       description,
       offers: [
-        { '@type': 'Offer', name: lang === 'fr' ? 'Bronze — Quick Fix' : 'Bronze — Quick Fix', price: '39', priceCurrency: 'EUR' },
+        { '@type': 'Offer', name: lang === 'fr' ? 'Bronze — Revue express' : 'Bronze — Quick Fix', price: '39', priceCurrency: 'EUR' },
         { '@type': 'Offer', name: lang === 'fr' ? 'Argent — Green Claims Fix' : 'Silver — Green Claims Fix', price: '249', priceCurrency: 'EUR' },
-        { '@type': 'Offer', name: 'Gold — Expert Review', price: '1490', priceCurrency: 'EUR' },
+        { '@type': 'Offer', name: lang === 'fr' ? 'Gold — Revue experte' : 'Gold — Expert Review', price: '1490', priceCurrency: 'EUR' },
       ],
     });
     document.head.appendChild(script);
     return () => script.remove();
   }, [lang, canonicalUrl]);
 
+  const languageClass = (active: boolean) =>
+    `rounded-full px-3 py-1.5 text-xs font-black tracking-wide transition ${
+      active ? 'bg-white text-slate-950 shadow-sm' : 'text-white/55 hover:text-white'
+    }`;
+
   return (
     <main className="min-h-screen bg-slate-950 text-white selection:bg-emerald-300 selection:text-slate-950">
       <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/90 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <a href={canonicalUrl} className="inline-flex items-baseline gap-2.5" aria-label="Green Claims Fix — by Exaptation">
-            <span className="text-base font-black tracking-tight text-white sm:text-lg">Green Claims Fix</span>
-            <span className="hidden text-xs font-semibold text-white/45 sm:inline">by Exaptation</span>
-          </a>
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4">
+          <div className="flex min-w-0 items-baseline gap-2.5">
+            <a href={canonicalUrl} className="truncate text-base font-black tracking-tight text-white sm:text-lg" aria-label="Green Claims Fix">
+              Green Claims Fix
+            </a>
+            <a href="/" className="hidden text-xs font-semibold text-white/45 hover:text-white/75 sm:inline">by Exaptation</a>
+          </div>
           <div className="flex items-center gap-3">
-            <a href={alternateUrl} hrefLang={lang === 'fr' ? 'en' : 'fr'} className="inline-flex items-center gap-2 rounded-full border border-white/15 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white/70 hover:text-white"><Globe2 size={14}/>{alternateLabel}</a>
+            <nav aria-label={lang === 'fr' ? 'Choisir la langue' : 'Choose language'} className="inline-flex items-center rounded-full border border-white/15 bg-white/5 p-1">
+              <span className="hidden px-2 text-white/35 sm:inline-flex"><Globe2 size={14}/></span>
+              <a href={frUrl} hrefLang="fr" lang="fr" aria-current={lang === 'fr' ? 'page' : undefined} className={languageClass(lang === 'fr')}>FR</a>
+              <a href={enUrl} hrefLang="en" lang="en" aria-current={lang === 'en' ? 'page' : undefined} className={languageClass(lang === 'en')}>EN</a>
+            </nav>
             <a href={mailto} className="hidden rounded-full bg-white px-4 py-2 text-sm font-bold text-slate-950 hover:bg-emerald-300 sm:inline-flex">{t.primary}</a>
           </div>
         </div>
@@ -325,7 +334,7 @@ const GreenClaimsFixV2: React.FC<GreenClaimsFixProps> = ({ initialLang = 'fr' })
               <div><div className="flex flex-wrap items-center gap-3"><p className="text-xl font-bold md:text-2xl">{t.claim}</p><span className="rounded-full bg-amber-100 px-3 py-1 text-xs font-bold uppercase tracking-wider text-amber-800">{t.status}</span></div><p className="mt-3 text-sm leading-relaxed text-slate-600">{t.why}</p></div>
               <div className="grid gap-4 md:grid-cols-2">
                 <div className="rounded-2xl border border-slate-200 bg-white p-5"><p className="text-xs font-bold uppercase tracking-wider text-slate-400">{t.evidenceLabel}</p><div className="mt-4 space-y-3">{t.evidence.map(item => <div key={item} className="flex items-start gap-2 text-sm text-slate-700"><Search size={15} className="mt-0.5 shrink-0 text-amber-600"/>{item}</div>)}</div></div>
-                <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-5"><p className="text-xs font-bold uppercase tracking-wider text-emerald-700">{t.actionLabel}</p><p className="mt-4 text-lg font-bold text-emerald-950">{t.action}</p><div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-emerald-800"><FileCheck2 size={16}/>Evidence matched to claim</div></div>
+                <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-5"><p className="text-xs font-bold uppercase tracking-wider text-emerald-700">{t.actionLabel}</p><p className="mt-4 text-lg font-bold text-emerald-950">{t.action}</p><div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-emerald-800"><FileCheck2 size={16}/>{t.evidenceMatched}</div></div>
               </div>
               <p className="text-xs leading-relaxed text-slate-400">{t.actionNote}</p>
             </div>
