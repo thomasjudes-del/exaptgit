@@ -14,11 +14,20 @@ const pathname = window.location.pathname.replace(/\/$/, '') || '/';
 const appPath = basePath && pathname.startsWith(basePath)
   ? pathname.slice(basePath.length) || '/'
   : pathname;
-const Page = appPath === '/green-claims-fix' ? GreenClaimsFixV2 : App;
+
+const legacyGcf = appPath === '/green-claims-fix';
+const frGcf = appPath === '/fr/green-claims-fix';
+const enGcf = appPath === '/en/green-claims-fix';
 
 const root = ReactDOM.createRoot(rootElement);
 root.render(
   <React.StrictMode>
-    <Page />
+    {legacyGcf || frGcf ? (
+      <GreenClaimsFixV2 initialLang="fr" />
+    ) : enGcf ? (
+      <GreenClaimsFixV2 initialLang="en" />
+    ) : (
+      <App />
+    )}
   </React.StrictMode>
 );
