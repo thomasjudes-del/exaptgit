@@ -8,13 +8,25 @@ Parent organisation: LGI Sustainable Innovation — https://lgi.earth/
 
 ## Green Claims Fix
 
-Official page: https://exaptation.studio/green-claims-fix/
+French page: https://exaptation.studio/fr/green-claims-fix/
+English page: https://exaptation.studio/en/green-claims-fix/
 
-Green Claims Fix helps brands identify environmental marketing claims, understand which claims need attention, map the evidence needed to substantiate them, identify evidence gaps, and prepare clearer evidence-aligned wording and a structured substantiation file.
+Green Claims Fix helps consumer-facing brands review environmental marketing claims, identify which claims need attention, determine what evidence should support them, identify evidence gaps, and prepare clearer evidence-aligned wording and actions.
 
 Primary market: France and the European Union.
-Typical users: consumer brands, ecommerce companies, marketing teams, sustainability teams and product teams using environmental claims on websites, product pages, packaging, advertising or marketplaces.
+Primary scope: business-to-consumer commercial communications such as websites, product pages, packaging, advertising, campaigns and marketplace listings.
+Typical users: consumer brands, ecommerce companies, marketing teams, sustainability teams and product teams.
 
-Green Claims Fix supports compliance preparation and evidence readiness. It is not legal advice, certification or assurance.
+### Service levels
 
-Key concepts: green claims, environmental claims, greenwashing risk, environmental marketing compliance, substantiation, evidence readiness, Directive (EU) 2024/825, EmpCo, France, EU.
+Bronze / Quick Fix — EUR 39: focused review of up to 5 priority claims. It explains why each claim deserves attention, links the relevant official source or rule, identifies evidence to collect or request, and recommends the next action.
+
+Silver / Green Claims Fix — EUR 249 (called Argent in French): structured review of up to 25 priority claims. It maps claims to available evidence, identifies what is supported and what is still missing, prepares supplier evidence requests, suggests clearer evidence-aligned wording and provides a Green Claims Evidence Pack.
+
+Gold / Expert Review — from EUR 1,490: includes the Silver review plus human expert review of priority claims and supporting documents, a consolidated action file, a review call and a recheck after modifications.
+
+Green Claims Fix supports claim review, substantiation preparation and remediation. It is not legal advice, certification or assurance.
+
+Regulatory focus includes current French consumer law and Directive (EU) 2024/825 (Empowering Consumers for the Green Transition / ECGT). The separate Green Claims Directive proposal COM(2023) 166 should not be confused with Directive (EU) 2024/825.
+
+Key concepts: green claims, environmental claims, greenwashing risk, environmental marketing compliance, claim substantiation, evidence readiness, Directive (EU) 2024/825, ECGT, UCPD, France, European Union.
